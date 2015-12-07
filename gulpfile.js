@@ -1,3 +1,8 @@
+/**
+ *
+ *  仅仅展示一下思路, 原料可run, 蛋依赖文件系统和gulp
+ *
+ */
 var gulp = require('gulp');
 var through = require('through-gulp');
 var jsonReader = require('json-config-reader');

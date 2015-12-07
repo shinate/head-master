@@ -2,11 +2,18 @@
   "name": "head-master",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/headMaster",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "shinate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinate/headMaster.git"
+  },
+  "bin": {
+    "hm": "./bin/hm.js"
+  },
   "license": "MIT",
   "dependencies": {
     "directory-tree": "^0.1.1",
