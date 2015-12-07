@@ -7,8 +7,8 @@ var HM = new headMaster({
     type: 0
 });
 
-// console.log(HM.packAll(['modules/a']));
-console.log(HM.packAll({
+// console.log(HM.packBundle(['modules/a']));
+console.log(HM.packBundle({
     'a': 'modules/a',
     'dep': './lib/dep_2'
 }));

@@ -92,7 +92,12 @@ function parseParam(args) {
 var HM = new headMaster(ARGS);
 
 if (ARGS.package) {
-    HM.packFile(ARGS.package, ARGS.namespace);
+    // one package
+    HM.packOne(ARGS.package, ARGS.namespace);
+
+    // more package
+    // TODO to be optimized
+    // HM.packBundle(ARGS.package, , ARGS.namespace);
 } else {
-    HM.packDir();
+    HM.packIsolated();
 }
