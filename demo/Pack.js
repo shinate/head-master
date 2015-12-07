@@ -1,4 +1,4 @@
-var headMaster = require('../lib/headMaster')
+var headMaster = require('../lib/headMaster');
 
 var HM = new headMaster({
     baseDir: 'demo/js',
