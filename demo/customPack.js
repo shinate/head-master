@@ -7,10 +7,11 @@ var HM = new headMaster({
     type: 7
 });
 
-var content = 'module.exports = {\
-    c: require(\'modules/a\')\
+var content = 'module.exports = {\n\
+    a: require(\'modules/a\'),\n\
+    b: require(\'modules/b\')\n\
 };'
 
-console.log(HM.pack(content));
-console.log(HM.pack(content, 'a'));
-console.log(HM.pack(content, 'b', {type: 1}));
+//console.log(HM.pack(content));
+//console.log(HM.pack(content, 'a'));
+console.log(HM.pack(content, 'customPack', {type: 1}));
