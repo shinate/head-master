@@ -1,0 +1,24 @@
+{
+  "name": "head-master",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "directory-tree": "^0.1.1",
+    "extract-comments": "^0.8.6",
+    "file-exists": "^1.0.0",
+    "fs": "0.0.2",
+    "mkdir-p": "0.0.7",
+    "path": "^0.12.7",
+    "shell-task": "^1.0.0",
+    "simple-unique-id": "0.0.1",
+    "uglify-js": "^2.6.1",
+    "util": "^0.10.3",
+    "yargs": "^3.30.0"
+  }
+}
