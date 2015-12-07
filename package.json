@@ -1,15 +1,15 @@
 {
   "name": "head-master",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
-  "main": "lib/headMaster",
+  "main": "lib/headMaster.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "shinate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shinate/headMaster.git"
+    "url": "git+https://github.com/shinate/head-master.git"
   },
   "bin": {
     "hm": "./bin/hm.js"
