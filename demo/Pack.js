@@ -14,4 +14,4 @@ var content = 'module.exports = {\n\
 
 //console.log(HM.pack(content));
 //console.log(HM.pack(content, 'a'));
-console.log(HM.pack(content, 'customPack', {type: 1}));
+console.log(HM.pack(content, 'a', {type: 1}));

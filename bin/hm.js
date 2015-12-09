@@ -21,6 +21,7 @@ $0 sourceDir outputDir [options]')
     .describe('type', '6')
     .describe('package', '7')
     .describe('namespace', '8')
+    .describe('variablify', '8')
 
     .alias('s', 'source')
     .alias('o', 'output')
@@ -30,6 +31,7 @@ $0 sourceDir outputDir [options]')
     .alias('t', 'type')
     .alias('p', 'package')
     .alias('n', 'namespace')
+    .alias('v', 'variablify')
 
     .string('source')
     .string('output')
@@ -38,6 +40,7 @@ $0 sourceDir outputDir [options]')
     .string('package')
     .string('namespace')
 
+    .boolean('variablify')
     .boolean('uglify')
     .boolean('instvar')
 
@@ -82,7 +85,11 @@ function parseParam(args) {
 
     r.namespace = args.namespace;
 
+    r.variablify = args.variablify;
+
     r.type = parseInt(args.type);
+
+    r.tab = '    ';
 
     console.log(args, r);
 
@@ -93,7 +100,7 @@ var HM = new headMaster(ARGS);
 
 if (ARGS.package) {
     // one package
-    HM.packOne(ARGS.package, ARGS.namespace);
+    HM.pack(ARGS.package, ARGS.namespace);
 
     // more package
     // TODO to be optimized
