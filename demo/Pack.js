@@ -12,6 +12,4 @@ var content = 'module.exports = {\n\
     b: require(\'modules/b\')\n\
 };'
 
-//console.log(HM.pack(content));
-//console.log(HM.pack(content, 'a'));
-console.log(HM.pack(content, 'a', {type: 1}));
+console.log(HM.pack(content, 'XXX', {type: 1}));

@@ -91,7 +91,7 @@ function parseParam(args) {
 
     r.tab = '    ';
 
-    console.log(args, r);
+    // console.log(args, r);
 
     return r;
 };

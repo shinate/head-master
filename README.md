@@ -4,9 +4,13 @@
 
 Tooooo late, and very tired o(╯□╰)o
 
-## Easy for use
+## Instantiation
 
-## Instantiation & method
+```bash
+npm install head-master
+```
+
+## Usage
 
 ```javascript
 var headMaster = require('head-master');
@@ -14,23 +18,41 @@ var headMaster = require('head-master');
 // Instantiation and set options
 var HM = new headMaster(options);
 
-// Pack one package(file) or from text content
-// @return {string}
+
+/**
+ * Pack one package(file) or from text content
+ *
+ * @param {string} source
+ * @param {string} namespace
+ * @param {object} opts
+ * @returns {string}
+ * @public
+ */
 HM.pack(source [, namespace] [, options]);
 
-// Pack from config : Array/Object/JsonString
-// To one namespace
-// TODO package register
-// @return {string}
-HM.packBundle(config [, namespace] [, options]);
+/**
+ * Pack from config : Array/Object/JsonString
+ * Organized as a single package(file)
+ *
+ * @param {object|array|string} source
+ * @param {string} namespace
+ * @param {object} options
+ * @returns {string}
+ * @public
+ * TODO to be optimized, package register
+ */
+HM.packBundle(source [, namespace] [, options]);
 
-// Pack one package(file) or from text content
-// Output to options.outputDir
-HM.packOne(source [, namespace] [, options]);
-
-// Pack all 'js' file ty themself dependencies from options.baseDir
-// Output to options.outputDir, will keep directory tree structure
-HM.packIsolated();
+/**
+ * Pack all 'js' file ty themself dependencies from options.baseDir.
+ * Output to options.outputDir, will keep directory tree structure.
+ *
+ * !! File system dependency, used for cli mode
+ *
+ * @param {object} opts
+ * @public
+ */
+HM.packIsolated([options]);
 
 ```
 

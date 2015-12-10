@@ -1,6 +1,6 @@
 {
   "name": "head-master",
-  "version": "0.2.3",
+  "version": "0.2.6",
   "description": "Manage your modules",
   "main": "lib/headMaster.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "directory-tree": "^0.1.1",
-    "extract-comments": "^0.8.6",
+    "drop-comments": "^1.0.1",
     "fs": "0.0.2",
     "mkdir-p": "0.0.7",
     "path": "^0.12.7",
@@ -25,5 +25,16 @@
     "uglify-js": "^2.6.1",
     "util": "^0.10.3",
     "yargs": "^3.30.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "karma": "^0.13.15",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-requirejs": "^0.2.2",
+    "mocha": "^2.3.4",
+    "phantomjs": "^1.9.19",
+    "requirejs": "^2.1.22"
   }
 }
