@@ -1,6 +1,6 @@
 {
   "name": "head-master",
-  "version": "0.2.7",
+  "version": "0.2.10",
   "description": "Manage your modules",
   "main": "lib/headMaster.js",
   "scripts": {
