@@ -1,25 +1,32 @@
 (function (global, factory) {
-    if (true) {
+    if (typeof define === 'function' && define['amd']) {
+        define(function () {
+            return factory(global);
+        });
+    } else if (typeof require === 'function' && typeof module === 'object' && module && typeof exports === 'object' && exports) {
+        module.exports = factory(global);
+    } else if (true) {
         global['lib_dep_2'] = global['lib_dep_2'] || factory(global);
     }
 })(this || window, function (global) {
-
-    var lib_dep_2;
-
-    lib_dep_2 = (function () {
-    
-        var module = {exports: {}}, exports = module.exports;
-    
-        exports.BBB = function () {
-        
-            console.log('dep_2');
-        
+    return (function (factory) {
+        var component = {};
+        var require = function (key) {
+            if (!component[key]) {
+                var module = {exports: {}};
+                factory[key].call(module.exports, require, module.exports, module);
+                component[key] = module.exports;
+            }
+            return component[key];
         };
-    
-        return module.exports;
-    
-    })();
-
-    return lib_dep_2;
-
+        return require('lib/dep_2');
+    })({
+        'lib/dep_2': function (require, exports, module) {
+            exports.BBB = function () {
+            
+                console.log('dep_2');
+            
+            };
+        }
+    });
 });
