@@ -1,5 +1,11 @@
 (function (global, factory) {
-    if (true) {
+    if (typeof define === 'function' && define['amd']) {
+        define(function () {
+            return factory(global);
+        });
+    } else if (typeof require === 'function' && typeof module === 'object' && module && typeof exports === 'object' && exports) {
+        module.exports = factory(global);
+    } else if (true) {
         global['modules_b'] = global['modules_b'] || factory(global);
     }
 })(this || window, function (global) {
