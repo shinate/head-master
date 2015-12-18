@@ -1,3 +1,4 @@
+/karma.conf.js
 /resource
 /.gitignore
 # Created by .ignore support plugin (hsz.mobi)
@@ -35,6 +36,7 @@
 
 ## Plugin-specific files:
 
+/test
 # IntelliJ
 /out/
 
