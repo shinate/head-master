@@ -1,7 +1,7 @@
 var headMaster = require('../lib/headMaster');
 
 var HM = new headMaster({
-    baseDir: 'demo/js',
+    sourceDir: 'demo/js',
     tab: '    ',
     uglify: false,
     type: 7
@@ -9,7 +9,8 @@ var HM = new headMaster({
 
 var content = 'module.exports = {\n\
     a: require(\'modules/a\'),\n\
-    b: require(\'modules/b\')\n\
-};'
+    b: require(\'modules/b\'),\n\
+    c: require(\'modules/c\')\n\
+};';
 
-console.log(HM.pack(content, 'XXX', {type: 1}));
+console.log(HM.pack(content));
