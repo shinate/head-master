@@ -1,17 +1,19 @@
 var headMaster = require('../lib/headMaster');
 
-var HM = new headMaster({
-    sourceDir: 'demo/js',
-    tab: '    ',
+var config = {
+    base: 'demo/js',
+    outputDir: 'dist',
+    camelCase: true,
     uglify: true,
-    type: 7,
-    variablify: true
-});
+    variablify: false
+};
 
-var content = 'module.exports = {\n\
+headMaster.pack('module.exports = {\n\
     a: require(\'modules/a\'),\n\
     b: require(\'modules/b\'),\n\
     c: require(\'modules/c\')\n\
-};';
+};', 'test/fromString_1', config);
 
-console.log(HM.pack(content, 'a').contents);
+headMaster.pack('module.exports = {\n\
+    b: require(\'modules/a\')\n\
+};', 'test/fromString_2', config);

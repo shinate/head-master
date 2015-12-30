@@ -16,17 +16,18 @@
   },
   "license": "MIT",
   "dependencies": {
-    "defaults": "^1.0.3",
     "directory-tree": "^0.1.1",
     "drop-comments": "^1.0.1",
+    "extend-object": "^1.0.0",
     "fs": "0.0.2",
-    "map-stream": "0.0.6",
     "mkdir-p": "0.0.7",
     "path": "^0.12.7",
     "random-string": "^0.1.2",
     "require-dir": "^0.3.0",
+    "through2": "^2.0.0",
     "uglify-js": "^2.6.1",
     "util": "^0.10.3",
+    "vinyl-fs": "^2.2.1",
     "yargs": "^3.30.0"
   },
   "devDependencies": {
