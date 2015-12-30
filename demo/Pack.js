@@ -14,4 +14,4 @@ var content = 'module.exports = {\n\
     c: require(\'modules/c\')\n\
 };';
 
-console.log(HM.pack(content).contents);
+console.log(HM.pack(content, 'a').contents);
