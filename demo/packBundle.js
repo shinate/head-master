@@ -7,4 +7,4 @@ var HM = new headMaster({
     type: 0
 });
 
-console.log(HM.pack('modules/a'));
+console.log(HM.packFromFile('modules/a'));

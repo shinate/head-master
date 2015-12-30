@@ -3,8 +3,9 @@ var headMaster = require('../lib/headMaster');
 var HM = new headMaster({
     sourceDir: 'demo/js',
     tab: '    ',
-    uglify: false,
-    type: 7
+    uglify: true,
+    type: 7,
+    variablify: true
 });
 
 var content = 'module.exports = {\n\
@@ -13,4 +14,4 @@ var content = 'module.exports = {\n\
     c: require(\'modules/c\')\n\
 };';
 
-console.log(HM.pack(content));
+console.log(HM.pack(content).contents);
