@@ -4,7 +4,7 @@ var config = {
     base: 'demo/js',
     outputDir: 'dist',
     camelCase: true,
-    uglify: true,
+    uglify: false,
     variablify: false
 };
 

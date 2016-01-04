@@ -1,8 +1,10 @@
 # head-master
 
+![HeadMaster](https://raw.githubusercontent.com/shinate/head-master/master/thumbnails/logo-512.png)
+
 ## What is it?
 
-Tooooo late, and very tired o(╯□╰)o
+Just a Bundler
 
 ## Instantiation
 
@@ -12,13 +14,30 @@ npm install head-master
 
 ## Usage
 
+### In nodejs script
+
 ```javascript
-var headMaster = require('head-master');
+var HM = require('head-master');
 
 // Instantiation and set options
-var HM = new headMaster(options);
+{HeadMaster instance} HM.pack({string}content \[, {string}namespace\] \[, {object}options\]);
 
+// Then, you may use many output methods
+.toString() to string
+.toBuffer() to buffer instance
+.toFile() to string and write as a file
+.toStream() to file instance
+```
 
+### In gulp OR stream
+
+```javascript
+var HM = require('head-master');
+
+gulp.src(['./js/**/*.js'])
+    .pipe(HM.map(options))
+    .pipe(gulp.dest('./dist'));
+```
 /**
  * Pack one package(file) or from text content
  *
