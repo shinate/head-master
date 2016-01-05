@@ -6,91 +6,98 @@
 
 Just a Bundler
 
-## Instantiation
+## Usage in nodejs script
+
+### Instantiation
 
 ```bash
 npm install head-master
 ```
 
-## Usage
-
-### In nodejs script
+### Native
 
 ```javascript
-var HM = require('head-master');
+var HeadMaster = require('head-master');
 
-// Instantiation and set options
-{HeadMaster instance} HM.pack({string}content \[, {string}namespace\] \[, {object}options\]);
+// {HeadMaster instance} HeadMaster.pack({string}content \[, {string}namespace\] \[, {object}options\]);
+HeadMaster.pack(content, namespace, options)
 
-// Then, you may use many output methods
-.toString() to string
-.toBuffer() to buffer instance
-.toFile() to string and write as a file
-.toStream() to file instance
+// And then, you may use many output methods
+.toString() === {string} to string
+.toBuffer() === {buffer} to buffer instance
+.toFile() === {*} to string and write as a file
+.toStream() === {file} to file instance
 ```
 
-### In gulp OR stream
+### options
+
+- base {string} The input path, must be set. default: null
+- contents {string} inputs contents. default: null
+- package {string} inputs package names(entrance name when packing). It will be assigned a random string when no setting, if the "contents" has been set, this invalid. default: null
+- namespace {string} Global namespace(output path). If not otherwise specified, will inherit "package". default: null
+- table {string} Indent character. default: '\t'.
+- mainfile {string} mainfile path. **TODO**
+- uglify {boolean} Whether uglify compile, default: false. **TODO** will support uglify configuration inputs.
+- type {integer} Output header type. values: 0~7, default: 0
+    - 0 No header
+    - 1 Global
+    - 2 Common js
+    - 4 AMD
+- variablify {boolean} Reference assembling converted to variable declaration, When enabled, better efficiency but fat. default: false.
+- camelCase {boolean} This will be effective when "variablify" enabled, Use underScoreCase OR camelCase naming convention to convert. It provides solutions for different file naming, if you use the name in two ways, God bless you ╮(╯▽╰)╭. default: false.
+
+### Gulp OR stream pipes
 
 ```javascript
-var HM = require('head-master');
+var HeadMaster = require('head-master');
 
 gulp.src(['./js/**/*.js'])
-    .pipe(HM.map(options))
+    .pipe(HeadMaster.map(options))
     .pipe(gulp.dest('./dist'));
 ```
-/**
- * Pack one package(file) or from text content
- *
- * @param {string} source
- * @param {string} namespace
- * @param {object} opts
- * @returns {string}
- * @public
- */
-HM.pack(source [, namespace] [, options]);
 
-/**
- * Pack from config : Array/Object/JsonString
- * Organized as a single package(file)
- *
- * @param {object|array|string} source
- * @param {string} namespace
- * @param {object} options
- * @returns {string}
- * @public
- * TODO to be optimized, package register
- */
-HM.packBundle(source [, namespace] [, options]);
+### options
 
-/**
- * Pack all 'js' file ty themself dependencies from options.baseDir.
- * Output to options.outputDir, will keep directory tree structure.
- *
- * !! File system dependency, used for cli mode
- *
- * @param {object} opts
- * @public
- */
-HM.packIsolated([options]);
+- bundle {string} special in stream mode. values: 'tree', 'map', 'relax'
 
-```
+*Others will inherit the default parameters, base is no need to set*
 
-### Options
-
-comming soon ...
-
-## cli
+## Usage in command line
 
 ### Global installation
+
 ```bash
 sudo npm install -g head-master
 ```
 
+### Command calls
+
 ```bash
-hm source_dir output_dir
+hm source output_dir options
 ```
 
-### Parameter
+### Options
 ```bash
 hm -h
+```
+
+## Advanced usage
+
+```javascript
+var HeadMaster = require('head-master');
+```
+
+```javascript
+new HeadMaster(options).pack();
+```
+
+```javascript
+new HeadMaster(options) // Initialization
+    .crawl()            // Analysis, dependency
+    .organize()         // Packaging
+    .header()           // Add header
+    .uglify()           // Compile compression
+    .to[Any]()          // Output AND Returns
+
+// .paramParse() can be used every where, adjust the rear of the parameters from the current
 ```
