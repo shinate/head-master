@@ -29,6 +29,8 @@ HeadMaster.pack(content, namespace, options)
 .toStream() === {file} to file instance
 ```
 
+**TODO: The first parameter will support multi-state. content, src, path(file/dir)**
+
 ### options
 
 - base {string} The input path, must be set. default: null
