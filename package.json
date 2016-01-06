@@ -1,6 +1,6 @@
 {
   "name": "head-master",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Manage your modules",
   "main": "lib/headMaster.js",
   "scripts": {
@@ -16,11 +16,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "directory-tree": "^0.1.1",
     "drop-comments": "^1.0.4",
     "espree": "^2.2.5",
     "extend-object": "^1.0.0",
     "fs": "0.0.2",
+    "map-files": "^0.7.5",
     "mkdirp": "^0.5.1",
     "path": "^0.12.7",
     "random-string": "^0.1.2",
